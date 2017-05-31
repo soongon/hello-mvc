@@ -16,4 +16,7 @@
 	<bean id="homeController" class="kr.re.kitri.hello.web.HomeController"/>
 	<bean id="bbsController" class="kr.re.kitri.hello.web.BbsController"/>
 
+	<bean id="commonExceptionHandler" 
+		class="kr.re.kitri.hello.web.CommonExceptionHandler"/>
+
 </beans>

@@ -43,6 +43,8 @@ public class BbsController {
 			@RequestParam Map<String, String> map,
 			HttpSession session) {
 		
+		int a = Integer.parseInt("a");
+		
 		session.setAttribute("session_key", "hello");
 		
 		System.out.println(map);

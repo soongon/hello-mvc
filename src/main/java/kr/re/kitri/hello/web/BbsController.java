@@ -77,9 +77,9 @@ public class BbsController {
 	public ModelAndView doWrite(@ModelAttribute("article") ArticleVO vo) {
 		
 		//서비스를 요청하여 사용자가 등록한 글을 DB에 insert
+		this.bbsService.registArticle(vo);
 		
 		//등록된 글을 화면에 보여준다.
-		
 		return new ModelAndView("write_ok");
 	}
 	

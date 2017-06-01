@@ -16,4 +16,9 @@ public class BbsService {
 		return dao.selectById(id);
 	}
 
+	public void registArticle(ArticleVO vo) {
+		dao.insertArticle(vo);
+		
+	}
+
 }

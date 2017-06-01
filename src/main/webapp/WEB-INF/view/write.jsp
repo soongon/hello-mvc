@@ -10,6 +10,7 @@
 
 <h1>글쓰기</h1>
 <form action="/hello-mvc/bbs/write" method="post" name="frm">
+	글번호: <input type="text" name="id"><br>
 	제목: <input type="text" name="title"><br>
 	작성자: <input type="text" name="author"><br>
 	내용: <textarea name="content"></textarea><br>

@@ -6,4 +6,7 @@
   <select id="selectById" parameterType="string" resultType="ArticleVO">
     select * from article where id = #{id}
   </select>
+  <insert id="insert" parameterType="ArticleVO">
+  	insert into article values (#{id}, #{title}, #{author}, #{content})
+  </insert>
 </mapper>

@@ -10,6 +10,7 @@
 
 <h1>등록완료</h1>
 <ul>
+	<li>${ article.id }</li>
 	<li>${ article.title }</li>
 	<li>${ article.author }</li>
 	<li>${ article.content }</li>

@@ -7,11 +7,13 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.re.kitri.hello.service.BbsService;
 import kr.re.kitri.hello.vo.ArticleVO;
 
 /**
@@ -30,8 +32,18 @@ import kr.re.kitri.hello.vo.ArticleVO;
 @RequestMapping("/bbs")
 public class BbsController {
 	
-//	@Autowired
-//	private BbsService service;
+	@Autowired
+	private BbsService bbsService;
+	
+	@RequestMapping(value="/{id}")
+	public ModelAndView detailView(@PathVariable("id") String id) {
+		System.out.println(id);
+		ArticleVO vo = this.bbsService.detailArticle(id);
+		
+		System.out.println(vo);
+		
+		return new ModelAndView("detail").addObject("article", vo);	
+	}
 	
 	@RequestMapping(value="/writ")
 	public String test() {

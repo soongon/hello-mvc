@@ -9,6 +9,11 @@
 <body>
 
 	<h2>글 상세보기입니다.</h2>
-	<h3>${ content }</h3>
+	<ul>
+		<li>${ article.id }</li>
+		<li>${ article.title }</li>
+		<li>${ article.author }</li>
+		<li>${ article.content }</li>
+	</ul>
 </body>
 </html>

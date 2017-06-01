@@ -43,7 +43,7 @@ id="WebApp_ID" version="3.1">
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			/WEB-INF/config/spring/applicationContext.xml
+			classpath:applicationContext.xml
 		</param-value>
 	</context-param>
 	

@@ -17,6 +17,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import kr.re.kitri.hello.vo.ArticleVO;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
 public class TestDB {
@@ -40,12 +42,13 @@ public class TestDB {
 	
 	@Test
 	public void testSqlSession() {
-//		SqlSessionTemplate session =
-//				ctx.getBean("sqlSession", SqlSessionTemplate.class);
-		Assert.assertNotNull(sqlSession);
+		ArticleVO vo = sqlSession.selectOne("article.selectById", "2");
+		System.out.println(vo);
+		Assert.assertTrue(vo.getAuthor().equals("lee"));
 	}
 	
 	@Test
+	@Ignore
 	public void testSqlSessionFactory() {
 //		SqlSessionFactoryBean factory = 
 //				ctx.getBean("sqlSessionFactory", SqlSessionFactoryBean.class);

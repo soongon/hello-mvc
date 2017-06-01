@@ -9,13 +9,20 @@ public class ArticleVO {
 	
 	public ArticleVO() {}
 	
-	public ArticleVO(String title, String author, String content) {
+	public ArticleVO(int id, String title, String author, String content) {
 		super();
+		this.id = id;
 		this.title = title;
 		this.author = author;
 		this.content = content;
 	}
-	
+
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -36,7 +43,6 @@ public class ArticleVO {
 	}
 	@Override
 	public String toString() {
-		return "ArticleVO [title=" + title + ", author=" + author + ", content=" + content + "]";
+		return "ArticleVO [id=" + id + ", title=" + title + ", author=" + author + ", content=" + content + "]";
 	}
-
 }

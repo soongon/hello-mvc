@@ -8,6 +8,7 @@
 </head>
 <body>
 
+
 	<h2>글 상세보기입니다.</h2>
 	<ul>
 		<li>${ article.id }</li>

@@ -14,6 +14,8 @@ public class ArticleDao {
 	
 	public ArticleVO selectById(String id) {
 		
+		System.out.println("log");
+		
 		return this.sqlSession.selectOne("article.selectById", id);
 	}
 

@@ -21,6 +21,7 @@ public class ArticleVO {
 		return id;
 	}
 	public void setId(int id) {
+		System.out.println("setId callback");
 		this.id = id;
 	}
 	public String getTitle() {

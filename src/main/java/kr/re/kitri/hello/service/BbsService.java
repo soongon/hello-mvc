@@ -13,6 +13,7 @@ public class BbsService {
 	private ArticleDao dao;
 	
 	public ArticleVO detailArticle(String id) {
+		
 		return dao.selectById(id);
 	}
 

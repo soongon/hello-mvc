@@ -1,19 +1,16 @@
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.sql.DataSource;
 
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -31,6 +28,14 @@ public class TestDB {
 	
 	@Autowired
 	SqlSessionTemplate sqlSession;
+	
+	@Test
+	public void testSelectAll() {
+		List<ArticleVO> list = this.sqlSession.selectList("article.selectAll");
+		System.out.println(list);
+		Assert.assertTrue(list.size() > 0);
+	}
+	
 	
 //	private ApplicationContext ctx;
 //	

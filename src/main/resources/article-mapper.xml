@@ -9,4 +9,7 @@
   <insert id="insert" parameterType="ArticleVO">
   	insert into article values (#{id}, #{title}, #{author}, #{content})
   </insert>
+  <select id="selectAll" resultType="ArticleVO">
+  	select * from article
+  </select>
 </mapper>
